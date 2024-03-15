@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { MdDelete } from "react-icons/md";
+import {API_URL} from "../apiConfig"
 
 
 function DeleteButton({ houseId, onDelete }) {
@@ -8,7 +9,7 @@ function DeleteButton({ houseId, onDelete }) {
     const handleClick = async () => {
         try {
             // console.log("houseId = ", houseId)
-            const response = await fetch(`http://localhost:8000/House/delete_house/${houseId}/`, {
+            const response = await fetch(`${API_URL}/House/delete_house/${houseId}/`, {
                 method: 'DELETE',
             });
             if (!response.ok) {

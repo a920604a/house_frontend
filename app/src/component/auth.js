@@ -1,9 +1,5 @@
-import axios from "axios";
+import {API_URL} from "../apiConfig"
 
-const userRequest = axios.create({
-    baseURL: 'http://localhost:8000',
-    headers: { 'Content-Type': 'application/json' },
-})
 
 export const login = async (userAccount, userPassword) => {
     try {
@@ -11,7 +7,7 @@ export const login = async (userAccount, userPassword) => {
             username: userAccount,
             password: userPassword
         };
-        const response = await fetch('http://localhost:8000/token/login/', {
+        const response = await fetch(`${API_URL}/token/login/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

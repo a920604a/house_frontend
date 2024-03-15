@@ -6,9 +6,8 @@ WORKDIR /app
 
 # 复制 package.json 和 package-lock.json 文件并安装依赖
 
-
 # 复制整个项目文件到工作目录
-COPY ./app/ /
+COPY ./app/ /app
 COPY docker-entrypoint.sh /bin/docker-entrypoint.sh
 RUN chmod +x /bin/docker-entrypoint.sh
 

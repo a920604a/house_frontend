@@ -18,6 +18,8 @@ import {
 } from '@chakra-ui/react';
 import * as Yup from 'yup';
 import { useFormik, Form, Formik } from 'formik';
+import {API_URL} from "../apiConfig"
+
 function HouseappForm() {
   const [formData, setFormData] = useState({
     age: '',
@@ -31,7 +33,7 @@ function HouseappForm() {
   const handleSubmitbackend = async (e) => {
 
     try {
-      const response = await fetch('http://localhost:8000/House/add_house/', {
+      const response = await fetch(`${API_URL}/House/add_house/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

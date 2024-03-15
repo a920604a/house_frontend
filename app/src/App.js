@@ -6,6 +6,7 @@ import HouseList from './component/HouseList';
 import LoginForm from './component/Login';
 import Header from "./component/Header";
 import { UserProvider, UserContext } from "./component/authContext";
+import {API_URL} from "./apiConfig"
 function App() {
 
 
@@ -52,7 +53,7 @@ const AppContent = () => {
   }, []);
   const fetchHouses = async () => {
     try {
-      const response = await fetch('http://localhost:8000/House/house_list/');
+      const response = await fetch(`${API_URL}/House/house_list/`);
       const data = await response.json();
 
       // console.log("fetchHouses", data)
