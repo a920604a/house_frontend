@@ -43,6 +43,7 @@ export default function LoginForm({ onLoginSuccess, onLoginFailure }) {
             }
             else {
                 setErrorMessage(data.message);
+                alert("帳號密碼錯誤");
             }
 
         });
