@@ -8,9 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend  # 🔥 關鍵：指向 frontend 資料夾
 
     steps:
       - name: Checkout repo
